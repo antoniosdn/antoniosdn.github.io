@@ -1,4 +1,5 @@
 ---
+import { AUTHOR_NAME, GITHUB_URL, LINKEDIN_URL } from '../consts';
 import Layout from '../layouts/BlogPost.astro';
 ---
 
@@ -6,14 +7,29 @@ import Layout from '../layouts/BlogPost.astro';
 	title="Sobre"
 	description="Quem escreve este blog e sobre o que ele trata."
 	pubDate={new Date('2026-10-03')}
+	updatedDate={new Date('2026-10-04')}
 >
 	<p>
-		Sou desenvolvedor focado no ecossistema TOTVS: formulários, datasets e workflows no Fluig,
-		fontes AdvPL/TLPP e APIs REST no Protheus, e integrações com sistemas acadêmicos e ERPs.
+		Sou {AUTHOR_NAME}, desenvolvedor sênior de Protheus e Fluig. Desenvolvo para Protheus desde
+		2011 e para Fluig desde 2018. Passei por fábrica de software na TOTVS, por consultoria e por
+		mais de 5 anos como Tech Lead em squads de serviços compartilhados e no time
+		financeiro-contábil, formando desenvolvedores e definindo padrões de arquitetura.
+	</p>
+	<p>
+		Hoje, na Ascendra, cuido do ponto onde Protheus e Fluig precisam conversar: integrações,
+		automação de processos e rastreabilidade.
+	</p>
+	<p>
+		<strong>Stack:</strong> AdvPL · TLPP · MVC · REST · SQL Server · Fluig (datasets,
+		formulários, eventos, widgets) · JavaScript · Git. Estou cursando Inteligência Artificial
+		(Gran, 2027) e uso IA no dia a dia de desenvolvimento.
 	</p>
 	<p>
 		Este blog reúne soluções, armadilhas e padrões que encontrei pelo caminho, além de
 		experimentos usando agentes de IA no desenvolvimento.
 	</p>
-	<p>Contato: <a href="https://github.com/antoniosdn">github.com/antoniosdn</a>.</p>
+	<p>
+		Contato: <a href={LINKEDIN_URL} target="_blank" rel="noopener me">LinkedIn</a> ·
+		<a href={GITHUB_URL} target="_blank" rel="noopener me">GitHub</a>.
+	</p>
 </Layout>

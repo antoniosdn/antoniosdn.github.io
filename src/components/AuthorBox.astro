@@ -1,0 +1,33 @@
+---
+import { AUTHOR_NAME, AUTHOR_ROLE, LINKEDIN_URL } from '../consts';
+---
+
+<aside class="author">
+	<p class="name">{AUTHOR_NAME}</p>
+	<p class="role">{AUTHOR_ROLE} · AdvPL/TLPP · Integrações Fluig ⇄ Protheus</p>
+	<p>
+		Tem uma dúvida, um caso parecido ou outra forma de resolver?
+		Vamos conversar no <a href={LINKEDIN_URL} target="_blank" rel="noopener">LinkedIn</a>.
+	</p>
+</aside>
+<style>
+	.author {
+		margin-top: 3em;
+		padding: 1.25em 1.5em;
+		border-left: 4px solid var(--accent);
+		border-radius: 8px;
+		background: rgb(var(--gray-light));
+	}
+	.author p {
+		margin: 0;
+	}
+	.name {
+		font-weight: 700;
+		color: rgb(var(--black));
+	}
+	.role {
+		margin-bottom: 0.75em !important;
+		font-size: 0.9em;
+		color: rgb(var(--gray));
+	}
+</style>
