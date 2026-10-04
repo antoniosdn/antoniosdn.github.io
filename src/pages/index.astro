@@ -4,7 +4,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import { AUTHOR_ROLE, LINKEDIN_URL, SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
 const posts = (await getCollection('blog'))
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
@@ -19,11 +19,17 @@ const posts = (await getCollection('blog'))
 	<body>
 		<Header />
 		<main>
-			<h1>Olá, sou o Antonio.</h1>
+			<h1>Olá, sou o Antonio Nascimento.</h1>
+			<p><strong>{AUTHOR_ROLE}</strong> · AdvPL/TLPP · Integrações Fluig ⇄ Protheus</p>
 			<p>
-				Desenvolvo customizações em TOTVS Fluig e Protheus (AdvPL/TLPP) e integrações entre
-				sistemas, cada vez mais com IA no fluxo de trabalho. Aqui escrevo sobre o que aprendo
-				resolvendo problemas reais.
+				Desenvolvo para Protheus desde 2011 e para Fluig desde 2018. Hoje cuido do ponto onde os
+				dois precisam conversar: integrações, automação de processos e rastreabilidade, cada vez
+				mais com IA no fluxo de trabalho. Aqui escrevo sobre o que aprendo resolvendo problemas
+				reais.
+			</p>
+			<p>
+				Quer trocar uma ideia?
+				Me chama no <a href={LINKEDIN_URL} target="_blank" rel="noopener me">LinkedIn</a>.
 			</p>
 
 			<h2>Posts recentes</h2>
