@@ -2,6 +2,7 @@
 title: 'Levando anexos do Fluig para a base de conhecimento do Protheus'
 description: 'URL de download que dá 404, base64 grande demais para uma chamada e retentativas que duplicam arquivo: como resolvemos o envio de anexos de um processo Fluig para a pré-nota no Protheus.'
 pubDate: '2026-10-03'
+heroImage: '../../assets/fluig-anexos-protheus.png'
 ---
 
 Num processo de notas fiscais, o fornecedor anexa a **Nota Fiscal** e o **Boleto** no Fluig.
