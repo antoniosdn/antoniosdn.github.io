@@ -2,6 +2,7 @@
 title: 'Por que seu dataset Fluig quebra com let e arrow function'
 description: 'Datasets e scripts de workflow do Fluig rodam no Rhino, limitado ao ECMA 5. Veja o que evitar e como substituir.'
 pubDate: '2026-10-03'
+heroImage: '../../assets/fluig-rhino-ecma5.png'
 ---
 
 Quem chega ao Fluig vindo do JavaScript moderno costuma tropeçar no mesmo ponto: o código
