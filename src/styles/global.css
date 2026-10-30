@@ -85,6 +85,30 @@ input {
 }
 table {
 	width: 100%;
+	border-collapse: collapse;
+	margin: 1.5em 0;
+	font-size: 0.85em;
+	line-height: 1.45;
+}
+th,
+td {
+	border: 1px solid rgba(var(--gray), 35%);
+	padding: 0.6em 0.8em;
+	text-align: left;
+	vertical-align: top;
+}
+th {
+	background-color: rgba(var(--gray-light), 60%);
+	color: rgb(var(--black));
+}
+tbody tr:nth-child(even) {
+	background-color: rgba(var(--gray-light), 25%);
+}
+@media (max-width: 720px) {
+	table {
+		display: block;
+		overflow-x: auto;
+	}
 }
 img {
 	max-width: 100%;
