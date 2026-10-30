@@ -1,0 +1,39 @@
+# Push na main: envia os artigos e as imagens para o site na VPS (repositório site-demandas),
+# que refaz o build. O deploy.yml (GitHub Pages) continua funcionando em paralelo.
+# Secrets: VPS_SSH_KEY (chave que só roda o receber.sh do site) e VPS_KNOWN_HOSTS.
+name: Publicar artigos na VPS
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/content/blog/**'
+      - 'src/assets/**'
+      - '.github/workflows/publicar-vps.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: vps
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Preparar SSH
+        env:
+          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
+          VPS_KNOWN_HOSTS: ${{ secrets.VPS_KNOWN_HOSTS }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$VPS_SSH_KEY" > ~/.ssh/vps
+          chmod 600 ~/.ssh/vps
+          printf '%s\n' "$VPS_KNOWN_HOSTS" > ~/.ssh/known_hosts
+
+      - name: Enviar e publicar
+        run: |
+          tar -czf - src/content/blog src/assets \
+            | ssh -i ~/.ssh/vps -o BatchMode=yes root@200.141.18.45 blog
